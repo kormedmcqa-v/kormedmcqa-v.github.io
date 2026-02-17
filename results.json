@@ -1,0 +1,1940 @@
+{
+  "A.X-4.0-VL-Light": {
+    "type": "korean",
+    "source": "SK Telecom",
+    "is_reasoning": false,
+    "size": 7,
+    "link": "https://huggingface.co/skt/A.X-4.0-VL-Light",
+    "kormedmcqa_v": {
+      "overall": 41.8,
+      "modality": {
+        "xray": 40.5,
+        "ct": 37.0,
+        "ecg": 43.5,
+        "us": 43.4,
+        "endoscopy": 35.5,
+        "nst": 39.9,
+        "pbs": 35.7,
+        "mri": 44.4,
+        "other": 46.3
+      },
+      "by_image_count": {
+        "1": 43.1,
+        "2": 38.7,
+        "3+": 41.9
+      }
+    },
+    "kormedmcqa_mixed": {
+      "2022": {
+        "text": 54.8,
+        "vision": 42.9,
+        "total": 48.6
+      },
+      "2023": {
+        "text": 53.1,
+        "vision": 44.6,
+        "total": 48.8
+      }
+    }
+  },
+  "GLM-4.6V": {
+    "type": "general",
+    "source": "Zhipu AI",
+    "is_reasoning": true,
+    "size": 106,
+    "link": "https://huggingface.co/zai-org/GLM-4.6V",
+    "kormedmcqa_v": {
+      "overall": 78.7,
+      "modality": {
+        "xray": 78.4,
+        "ct": 75.0,
+        "ecg": 80.3,
+        "us": 72.0,
+        "endoscopy": 72.8,
+        "nst": 60.9,
+        "pbs": 86.8,
+        "mri": 86.4,
+        "other": 83.3
+      },
+      "by_image_count": {
+        "1": 80.0,
+        "2": 75.1,
+        "3+": 80.3
+      }
+    },
+    "kormedmcqa_mixed": {
+      "2022": {
+        "text": 83.0,
+        "vision": 75.8,
+        "total": 79.2
+      },
+      "2023": {
+        "text": 85.8,
+        "vision": 84.3,
+        "total": 85.0
+      }
+    }
+  },
+  "GLM-4.6V-Flash": {
+    "type": "general",
+    "source": "Zhipu AI",
+    "is_reasoning": true,
+    "size": 9,
+    "link": "https://huggingface.co/zai-org/GLM-4.6V-Flash",
+    "kormedmcqa_v": {
+      "overall": 65.5,
+      "modality": {
+        "xray": 63.3,
+        "ct": 59.5,
+        "ecg": 68.4,
+        "us": 60.4,
+        "endoscopy": 62.7,
+        "nst": 48.6,
+        "pbs": 65.1,
+        "mri": 80.2,
+        "other": 72.2
+      },
+      "by_image_count": {
+        "1": 66.3,
+        "2": 63.6,
+        "3+": 63.2
+      }
+    },
+    "kormedmcqa_mixed": {
+      "2022": {
+        "text": 68.4,
+        "vision": 65.5,
+        "total": 66.9
+      },
+      "2023": {
+        "text": 66.2,
+        "vision": 65.8,
+        "total": 66.0
+      }
+    }
+  },
+  "Gemma-3-12B-IT": {
+    "type": "general",
+    "source": "Google",
+    "is_reasoning": false,
+    "size": 12,
+    "link": "https://huggingface.co/google/gemma-3-12b-it",
+    "kormedmcqa_v": {
+      "overall": 54.3,
+      "modality": {
+        "xray": 51.6,
+        "ct": 53.5,
+        "ecg": 62.6,
+        "us": 50.9,
+        "endoscopy": 51.1,
+        "nst": 41.3,
+        "pbs": 46.5,
+        "mri": 48.1,
+        "other": 59.6
+      },
+      "by_image_count": {
+        "1": 55.4,
+        "2": 52.5,
+        "3+": 45.3
+      }
+    },
+    "kormedmcqa_mixed": {
+      "2022": {
+        "text": 63.0,
+        "vision": 55.9,
+        "total": 59.3
+      },
+      "2023": {
+        "text": 57.3,
+        "vision": 61.8,
+        "total": 59.6
+      }
+    }
+  },
+  "Gemma-3-27B-IT": {
+    "type": "general",
+    "source": "Google",
+    "is_reasoning": false,
+    "size": 27,
+    "link": "https://huggingface.co/google/gemma-3-27b-it",
+    "kormedmcqa_v": {
+      "overall": 57.3,
+      "modality": {
+        "xray": 57.6,
+        "ct": 51.6,
+        "ecg": 65.0,
+        "us": 45.3,
+        "endoscopy": 47.8,
+        "nst": 43.5,
+        "pbs": 55.8,
+        "mri": 63.0,
+        "other": 63.4
+      },
+      "by_image_count": {
+        "1": 57.1,
+        "2": 57.7,
+        "3+": 56.4
+      }
+    },
+    "kormedmcqa_mixed": {
+      "2022": {
+        "text": 63.7,
+        "vision": 55.5,
+        "total": 59.4
+      },
+      "2023": {
+        "text": 58.4,
+        "vision": 56.7,
+        "total": 57.5
+      }
+    }
+  },
+  "Gemma-3-4B-IT": {
+    "type": "general",
+    "source": "Google",
+    "is_reasoning": false,
+    "size": 4,
+    "link": "https://huggingface.co/google/gemma-3-4b-it",
+    "kormedmcqa_v": {
+      "overall": 34.3,
+      "modality": {
+        "xray": 32.7,
+        "ct": 27.6,
+        "ecg": 36.7,
+        "us": 39.6,
+        "endoscopy": 26.1,
+        "nst": 30.4,
+        "pbs": 27.9,
+        "mri": 48.1,
+        "other": 38.7
+      },
+      "by_image_count": {
+        "1": 34.1,
+        "2": 34.7,
+        "3+": 33.3
+      }
+    },
+    "kormedmcqa_mixed": {
+      "2022": {
+        "text": 37.0,
+        "vision": 31.3,
+        "total": 34.0
+      },
+      "2023": {
+        "text": 30.0,
+        "vision": 33.5,
+        "total": 31.8
+      }
+    }
+  },
+  "Hulu-Med-14B": {
+    "type": "medical",
+    "source": "Tencent",
+    "is_reasoning": false,
+    "size": 14,
+    "link": "https://huggingface.co/TencentMedicalAI/Hulu-Med-14B",
+    "kormedmcqa_v": {
+      "overall": 55.1,
+      "modality": {
+        "xray": 54.3,
+        "ct": 50.7,
+        "ecg": 55.8,
+        "us": 52.8,
+        "endoscopy": 53.3,
+        "nst": 59.4,
+        "pbs": 54.3,
+        "mri": 53.1,
+        "other": 58.2
+      },
+      "by_image_count": {
+        "1": 55.8,
+        "2": 53.6,
+        "3+": 51.3
+      }
+    },
+    "kormedmcqa_mixed": {
+      "2022": {
+        "text": 62.7,
+        "vision": 55.3,
+        "total": 58.8
+      },
+      "2023": {
+        "text": 65.1,
+        "vision": 60.9,
+        "total": 63.0
+      }
+    }
+  },
+  "Hulu-Med-32B": {
+    "type": "medical",
+    "source": "Tencent",
+    "is_reasoning": false,
+    "size": 32,
+    "link": "https://huggingface.co/TencentMedicalAI/Hulu-Med-32B",
+    "kormedmcqa_v": {
+      "overall": 64.7,
+      "modality": {
+        "xray": 61.8,
+        "ct": 63.5,
+        "ecg": 74.5,
+        "us": 59.4,
+        "endoscopy": 59.8,
+        "nst": 60.9,
+        "pbs": 81.4,
+        "mri": 70.4,
+        "other": 66.7
+      },
+      "by_image_count": {
+        "1": 66.5,
+        "2": 60.6,
+        "3+": 59.0
+      }
+    },
+    "kormedmcqa_mixed": {
+      "2022": {
+        "text": 62.5,
+        "vision": 63.0,
+        "total": 62.8
+      },
+      "2023": {
+        "text": 69.3,
+        "vision": 71.5,
+        "total": 70.5
+      }
+    }
+  },
+  "Hulu-Med-4B": {
+    "type": "medical",
+    "source": "Tencent",
+    "is_reasoning": false,
+    "size": 4,
+    "link": "https://huggingface.co/TencentMedicalAI/Hulu-Med-4B",
+    "kormedmcqa_v": {
+      "overall": 46.1,
+      "modality": {
+        "xray": 45.4,
+        "ct": 39.2,
+        "ecg": 48.6,
+        "us": 45.6,
+        "endoscopy": 44.2,
+        "nst": 46.4,
+        "pbs": 48.1,
+        "mri": 54.3,
+        "other": 49.0
+      },
+      "by_image_count": {
+        "1": 47.2,
+        "2": 44.3,
+        "3+": 35.0
+      }
+    },
+    "kormedmcqa_mixed": {
+      "2022": {
+        "text": 54.1,
+        "vision": 45.4,
+        "total": 49.6
+      },
+      "2023": {
+        "text": 46.7,
+        "vision": 49.0,
+        "total": 47.9
+      }
+    }
+  },
+  "Hulu-Med-7B": {
+    "type": "medical",
+    "source": "Tencent",
+    "is_reasoning": false,
+    "size": 7,
+    "link": "https://huggingface.co/TencentMedicalAI/Hulu-Med-7B",
+    "kormedmcqa_v": {
+      "overall": 43.9,
+      "modality": {
+        "xray": 41.1,
+        "ct": 41.0,
+        "ecg": 48.6,
+        "us": 39.3,
+        "endoscopy": 44.6,
+        "nst": 42.8,
+        "pbs": 48.8,
+        "mri": 45.7,
+        "other": 47.3
+      },
+      "by_image_count": {
+        "1": 45.6,
+        "2": 40.2,
+        "3+": 36.8
+      }
+    },
+    "kormedmcqa_mixed": {
+      "2022": {
+        "text": 54.3,
+        "vision": 42.7,
+        "total": 48.3
+      },
+      "2023": {
+        "text": 51.3,
+        "vision": 50.5,
+        "total": 50.9
+      }
+    }
+  },
+  "HyperCLOVAX-SEED-Vision-Instruct-3B": {
+    "type": "korean",
+    "source": "Naver",
+    "is_reasoning": false,
+    "size": 3,
+    "link": "https://huggingface.co/naver-hyperclovax/HyperCLOVAX-SEED-Vision-Instruct-3B",
+    "kormedmcqa_v": {
+      "overall": 26.3,
+      "modality": {
+        "xray": 25.7,
+        "ct": 21.5,
+        "ecg": 21.8,
+        "us": 27.0,
+        "endoscopy": 23.9,
+        "nst": 26.1,
+        "pbs": 26.4,
+        "mri": 13.6,
+        "other": 31.0
+      },
+      "by_image_count": {
+        "1": 27.4,
+        "2": 24.1,
+        "3+": 21.4
+      }
+    },
+    "kormedmcqa_mixed": {
+      "2022": {
+        "text": 33.3,
+        "vision": 29.5,
+        "total": 31.3
+      },
+      "2023": {
+        "text": 32.7,
+        "vision": 26.1,
+        "total": 29.3
+      }
+    }
+  },
+  "InternVL3.5-14B": {
+    "type": "general",
+    "source": "OpenGVLab",
+    "is_reasoning": false,
+    "size": 14,
+    "link": "https://huggingface.co/OpenGVLab/InternVL3-14B",
+    "kormedmcqa_v": {
+      "overall": 53.6,
+      "modality": {
+        "xray": 54.2,
+        "ct": 48.4,
+        "ecg": 58.8,
+        "us": 49.4,
+        "endoscopy": 48.9,
+        "nst": 52.9,
+        "pbs": 53.5,
+        "mri": 56.8,
+        "other": 55.8
+      },
+      "by_image_count": {
+        "1": 53.6,
+        "2": 53.7,
+        "3+": 53.0
+      }
+    },
+    "kormedmcqa_mixed": {
+      "2022": {
+        "text": 49.9,
+        "vision": 55.5,
+        "total": 52.8
+      },
+      "2023": {
+        "text": 58.7,
+        "vision": 57.5,
+        "total": 58.1
+      }
+    }
+  },
+  "InternVL3.5-1B": {
+    "type": "general",
+    "source": "OpenGVLab",
+    "is_reasoning": false,
+    "size": 1,
+    "link": "https://huggingface.co/OpenGVLab/InternVL3-1B",
+    "kormedmcqa_v": {
+      "overall": 22.4,
+      "modality": {
+        "xray": 21.4,
+        "ct": 22.6,
+        "ecg": 20.1,
+        "us": 19.5,
+        "endoscopy": 18.8,
+        "nst": 30.4,
+        "pbs": 18.6,
+        "mri": 6.2,
+        "other": 25.6
+      },
+      "by_image_count": {
+        "1": 22.6,
+        "2": 22.6,
+        "3+": 13.7
+      }
+    },
+    "kormedmcqa_mixed": {
+      "2022": {
+        "text": 19.8,
+        "vision": 26.3,
+        "total": 23.1
+      },
+      "2023": {
+        "text": 20.7,
+        "vision": 21.7,
+        "total": 21.2
+      }
+    }
+  },
+  "InternVL3.5-2B": {
+    "type": "general",
+    "source": "OpenGVLab",
+    "is_reasoning": false,
+    "size": 2,
+    "link": "https://huggingface.co/OpenGVLab/InternVL3-2B",
+    "kormedmcqa_v": {
+      "overall": 29.8,
+      "modality": {
+        "xray": 29.8,
+        "ct": 27.3,
+        "ecg": 32.0,
+        "us": 28.6,
+        "endoscopy": 23.6,
+        "nst": 32.6,
+        "pbs": 28.7,
+        "mri": 24.7,
+        "other": 32.1
+      },
+      "by_image_count": {
+        "1": 30.3,
+        "2": 28.4,
+        "3+": 31.6
+      }
+    },
+    "kormedmcqa_mixed": {
+      "2022": {
+        "text": 29.4,
+        "vision": 30.4,
+        "total": 29.9
+      },
+      "2023": {
+        "text": 32.7,
+        "vision": 30.1,
+        "total": 31.4
+      }
+    }
+  },
+  "InternVL3.5-30B-A3B": {
+    "type": "general",
+    "source": "OpenGVLab",
+    "is_reasoning": false,
+    "size": 30,
+    "link": "https://huggingface.co/OpenGVLab/InternVL3-30B-A3B",
+    "kormedmcqa_v": {
+      "overall": 66.4,
+      "modality": {
+        "xray": 68.9,
+        "ct": 60.1,
+        "ecg": 71.1,
+        "us": 65.4,
+        "endoscopy": 56.5,
+        "nst": 54.3,
+        "pbs": 75.2,
+        "mri": 75.3,
+        "other": 67.5
+      },
+      "by_image_count": {
+        "1": 67.3,
+        "2": 64.5,
+        "3+": 62.4
+      }
+    },
+    "kormedmcqa_mixed": {
+      "2022": {
+        "text": 59.8,
+        "vision": 62.3,
+        "total": 61.1
+      },
+      "2023": {
+        "text": 65.6,
+        "vision": 67.7,
+        "total": 66.7
+      }
+    }
+  },
+  "InternVL3.5-38B": {
+    "type": "general",
+    "source": "OpenGVLab",
+    "is_reasoning": false,
+    "size": 38,
+    "link": "https://huggingface.co/OpenGVLab/InternVL3-38B",
+    "kormedmcqa_v": {
+      "overall": 67.2,
+      "modality": {
+        "xray": 66.7,
+        "ct": 62.2,
+        "ecg": 72.8,
+        "us": 61.9,
+        "endoscopy": 64.1,
+        "nst": 50.7,
+        "pbs": 76.0,
+        "mri": 79.0,
+        "other": 70.6
+      },
+      "by_image_count": {
+        "1": 68.6,
+        "2": 64.2,
+        "3+": 61.5
+      }
+    },
+    "kormedmcqa_mixed": {
+      "2022": {
+        "text": 61.5,
+        "vision": 63.5,
+        "total": 62.5
+      },
+      "2023": {
+        "text": 64.9,
+        "vision": 69.6,
+        "total": 67.3
+      }
+    }
+  },
+  "InternVL3.5-4B": {
+    "type": "general",
+    "source": "OpenGVLab",
+    "is_reasoning": false,
+    "size": 4,
+    "link": "https://huggingface.co/OpenGVLab/InternVL3-4B",
+    "kormedmcqa_v": {
+      "overall": 43.3,
+      "modality": {
+        "xray": 43.9,
+        "ct": 41.0,
+        "ecg": 44.9,
+        "us": 43.7,
+        "endoscopy": 40.6,
+        "nst": 38.4,
+        "pbs": 47.3,
+        "mri": 42.0,
+        "other": 43.9
+      },
+      "by_image_count": {
+        "1": 44.2,
+        "2": 41.6,
+        "3+": 35.9
+      }
+    },
+    "kormedmcqa_mixed": {
+      "2022": {
+        "text": 40.0,
+        "vision": 43.4,
+        "total": 41.8
+      },
+      "2023": {
+        "text": 41.8,
+        "vision": 41.8,
+        "total": 41.8
+      }
+    }
+  },
+  "InternVL3.5-8B": {
+    "type": "general",
+    "source": "OpenGVLab",
+    "is_reasoning": false,
+    "size": 8,
+    "link": "https://huggingface.co/OpenGVLab/InternVL3-8B",
+    "kormedmcqa_v": {
+      "overall": 47.4,
+      "modality": {
+        "xray": 44.8,
+        "ct": 44.3,
+        "ecg": 53.6,
+        "us": 49.1,
+        "endoscopy": 41.8,
+        "nst": 42.4,
+        "pbs": 45.3,
+        "mri": 61.1,
+        "other": 50.6
+      },
+      "by_image_count": {
+        "1": 49.0,
+        "2": 44.7,
+        "3+": 32.1
+      }
+    },
+    "kormedmcqa_mixed": {
+      "2022": {
+        "text": 48.9,
+        "vision": 47.0,
+        "total": 47.9
+      },
+      "2023": {
+        "text": 48.2,
+        "vision": 52.7,
+        "total": 50.5
+      }
+    }
+  },
+  "Kimi-VL-A3B-Instruct": {
+    "type": "general",
+    "source": "Moonshot AI",
+    "is_reasoning": false,
+    "size": 16,
+    "link": "https://huggingface.co/moonshotai/Kimi-VL-A3B-Instruct",
+    "kormedmcqa_v": {
+      "overall": 30.8,
+      "modality": {
+        "xray": 30.3,
+        "ct": 28.8,
+        "ecg": 22.8,
+        "us": 31.8,
+        "endoscopy": 29.0,
+        "nst": 37.0,
+        "pbs": 20.2,
+        "mri": 28.4,
+        "other": 34.5
+      },
+      "by_image_count": {
+        "1": 32.3,
+        "2": 26.3,
+        "3+": 40.2
+      }
+    },
+    "kormedmcqa_mixed": {
+      "2022": {
+        "text": 27.7,
+        "vision": 31.7,
+        "total": 29.8
+      },
+      "2023": {
+        "text": 29.3,
+        "vision": 26.5,
+        "total": 27.9
+      }
+    }
+  },
+  "Kimi-VL-A3B-Thinking": {
+    "type": "general",
+    "source": "Moonshot AI",
+    "is_reasoning": true,
+    "size": 16,
+    "link": "https://huggingface.co/moonshotai/Kimi-VL-A3B-Thinking",
+    "kormedmcqa_v": {
+      "overall": 37.6,
+      "modality": {
+        "xray": 37.2,
+        "ct": 28.6,
+        "ecg": 43.4,
+        "us": 34.4,
+        "endoscopy": 34.2,
+        "nst": 31.5,
+        "pbs": 38.4,
+        "mri": 44.4,
+        "other": 42.2
+      },
+      "by_image_count": {
+        "1": 39.9,
+        "2": 32.4,
+        "3+": 32.1
+      }
+    },
+    "kormedmcqa_mixed": {
+      "2022": {
+        "text": 42.2,
+        "vision": 40.8,
+        "total": 41.5
+      },
+      "2023": {
+        "text": 38.0,
+        "vision": 35.7,
+        "total": 36.8
+      }
+    }
+  },
+  "Lingshu-32B": {
+    "type": "medical",
+    "source": "InclusionAI",
+    "is_reasoning": false,
+    "size": 32,
+    "link": "https://huggingface.co/inclusionAI/Lingshu-32B",
+    "kormedmcqa_v": {
+      "overall": 66.1,
+      "modality": {
+        "xray": 65.5,
+        "ct": 60.2,
+        "ecg": 74.1,
+        "us": 64.2,
+        "endoscopy": 62.0,
+        "nst": 54.3,
+        "pbs": 77.5,
+        "mri": 81.5,
+        "other": 68.0
+      },
+      "by_image_count": {
+        "1": 66.8,
+        "2": 64.4,
+        "3+": 65.0
+      }
+    },
+    "kormedmcqa_mixed": {
+      "2022": {
+        "text": 63.0,
+        "vision": 62.6,
+        "total": 62.8
+      },
+      "2023": {
+        "text": 64.4,
+        "vision": 71.3,
+        "total": 68.0
+      }
+    }
+  },
+  "Lingshu-7B": {
+    "type": "medical",
+    "source": "InclusionAI",
+    "is_reasoning": false,
+    "size": 7,
+    "link": "https://huggingface.co/inclusionAI/Lingshu-7B",
+    "kormedmcqa_v": {
+      "overall": 46.6,
+      "modality": {
+        "xray": 44.8,
+        "ct": 44.1,
+        "ecg": 53.7,
+        "us": 39.3,
+        "endoscopy": 44.6,
+        "nst": 47.1,
+        "pbs": 51.2,
+        "mri": 54.3,
+        "other": 49.1
+      },
+      "by_image_count": {
+        "1": 48.7,
+        "2": 41.6,
+        "3+": 43.6
+      }
+    },
+    "kormedmcqa_mixed": {
+      "2022": {
+        "text": 47.9,
+        "vision": 42.7,
+        "total": 45.2
+      },
+      "2023": {
+        "text": 53.6,
+        "vision": 49.5,
+        "total": 51.5
+      }
+    }
+  },
+  "MedGemma-1.5-4B-IT": {
+    "type": "medical",
+    "source": "Google",
+    "is_reasoning": false,
+    "size": 4,
+    "link": "https://huggingface.co/google/medgemma-4b-it",
+    "kormedmcqa_v": {
+      "overall": 44.4,
+      "modality": {
+        "xray": 44.3,
+        "ct": 39.9,
+        "ecg": 49.3,
+        "us": 36.5,
+        "endoscopy": 43.8,
+        "nst": 50.0,
+        "pbs": 55.0,
+        "mri": 48.1,
+        "other": 45.6
+      },
+      "by_image_count": {
+        "1": 48.1,
+        "2": 36.1,
+        "3+": 36.8
+      }
+    },
+    "kormedmcqa_mixed": {
+      "2022": {
+        "text": 54.8,
+        "vision": 43.6,
+        "total": 49.0
+      },
+      "2023": {
+        "text": 51.8,
+        "vision": 43.7,
+        "total": 47.7
+      }
+    }
+  },
+  "MedGemma-27B-IT": {
+    "type": "medical",
+    "source": "Google",
+    "is_reasoning": false,
+    "size": 27,
+    "link": "https://huggingface.co/google/medgemma-27b-text-it",
+    "kormedmcqa_v": {
+      "overall": 56.8,
+      "modality": {
+        "xray": 57.9,
+        "ct": 44.4,
+        "ecg": 63.9,
+        "us": 50.0,
+        "endoscopy": 54.7,
+        "nst": 41.3,
+        "pbs": 62.8,
+        "mri": 58.0,
+        "other": 62.0
+      },
+      "by_image_count": {
+        "1": 56.3,
+        "2": 59.2,
+        "3+": 42.7
+      }
+    },
+    "kormedmcqa_mixed": {
+      "2022": {
+        "text": 64.4,
+        "vision": 52.3,
+        "total": 58.1
+      },
+      "2023": {
+        "text": 61.3,
+        "vision": 57.7,
+        "total": 59.5
+      }
+    }
+  },
+  "MedGemma-4B-IT": {
+    "type": "medical",
+    "source": "Google",
+    "is_reasoning": false,
+    "size": 4,
+    "link": "https://huggingface.co/google/medgemma-4b-it",
+    "kormedmcqa_v": {
+      "overall": 34.4,
+      "modality": {
+        "xray": 31.3,
+        "ct": 28.1,
+        "ecg": 35.7,
+        "us": 35.8,
+        "endoscopy": 31.5,
+        "nst": 39.1,
+        "pbs": 30.2,
+        "mri": 29.6,
+        "other": 40.3
+      },
+      "by_image_count": {
+        "1": 34.8,
+        "2": 34.5,
+        "3+": 20.5
+      }
+    },
+    "kormedmcqa_mixed": {
+      "2022": {
+        "text": 42.7,
+        "vision": 37.7,
+        "total": 40.1
+      },
+      "2023": {
+        "text": 41.3,
+        "vision": 33.8,
+        "total": 37.5
+      }
+    }
+  },
+  "Ministral-3-14B-Instruct-2512": {
+    "type": "general",
+    "source": "Mistral AI",
+    "is_reasoning": false,
+    "size": 14,
+    "link": "https://huggingface.co/mistralai/Ministral-3-14B-Instruct-2512-BF16",
+    "kormedmcqa_v": {
+      "overall": 56.5,
+      "modality": {
+        "xray": 54.6,
+        "ct": 51.4,
+        "ecg": 65.6,
+        "us": 54.4,
+        "endoscopy": 56.2,
+        "nst": 47.8,
+        "pbs": 50.4,
+        "mri": 69.1,
+        "other": 59.9
+      },
+      "by_image_count": {
+        "1": 57.8,
+        "2": 53.8,
+        "3+": 50.4
+      }
+    },
+    "kormedmcqa_mixed": {
+      "2022": {
+        "text": 61.5,
+        "vision": 54.1,
+        "total": 57.7
+      },
+      "2023": {
+        "text": 62.2,
+        "vision": 63.1,
+        "total": 62.6
+      }
+    }
+  },
+  "Ministral-3-14B-Reasoning-2512": {
+    "type": "general",
+    "source": "Mistral AI",
+    "is_reasoning": true,
+    "size": 14,
+    "link": "https://huggingface.co/mistralai/Ministral-3-14B-Reasoning-2512",
+    "kormedmcqa_v": {
+      "overall": 72.7,
+      "modality": {
+        "xray": 71.2,
+        "ct": 70.3,
+        "ecg": 71.1,
+        "us": 73.6,
+        "endoscopy": 73.9,
+        "nst": 55.8,
+        "pbs": 79.8,
+        "mri": 86.4,
+        "other": 75.5
+      },
+      "by_image_count": {
+        "1": 73.4,
+        "2": 71.4,
+        "3+": 69.2
+      }
+    },
+    "kormedmcqa_mixed": {
+      "2022": {
+        "text": 75.3,
+        "vision": 74.9,
+        "total": 75.1
+      },
+      "2023": {
+        "text": 73.1,
+        "vision": 76.2,
+        "total": 74.7
+      }
+    }
+  },
+  "Ministral-3-3B-Instruct-2512": {
+    "type": "general",
+    "source": "Mistral AI",
+    "is_reasoning": false,
+    "size": 3,
+    "link": "https://huggingface.co/mistralai/Ministral-3-3B-Instruct-2512-BF16",
+    "kormedmcqa_v": {
+      "overall": 41.8,
+      "modality": {
+        "xray": 42.2,
+        "ct": 38.0,
+        "ecg": 39.8,
+        "us": 41.8,
+        "endoscopy": 41.3,
+        "nst": 43.5,
+        "pbs": 29.5,
+        "mri": 51.9,
+        "other": 43.9
+      },
+      "by_image_count": {
+        "1": 43.4,
+        "2": 38.2,
+        "3+": 37.6
+      }
+    },
+    "kormedmcqa_mixed": {
+      "2022": {
+        "text": 44.0,
+        "vision": 42.9,
+        "total": 43.4
+      },
+      "2023": {
+        "text": 46.2,
+        "vision": 41.4,
+        "total": 43.8
+      }
+    }
+  },
+  "Ministral-3-3B-Reasoning-2512": {
+    "type": "general",
+    "source": "Mistral AI",
+    "is_reasoning": true,
+    "size": 3,
+    "link": "https://huggingface.co/mistralai/Ministral-3-3B-Reasoning-2512",
+    "kormedmcqa_v": {
+      "overall": 45.2,
+      "modality": {
+        "xray": 42.7,
+        "ct": 42.5,
+        "ecg": 47.6,
+        "us": 44.7,
+        "endoscopy": 51.4,
+        "nst": 37.7,
+        "pbs": 48.1,
+        "mri": 46.9,
+        "other": 47.7
+      },
+      "by_image_count": {
+        "1": 46.5,
+        "2": 42.2,
+        "3+": 45.3
+      }
+    },
+    "kormedmcqa_mixed": {
+      "2022": {
+        "text": 54.3,
+        "vision": 49.1,
+        "total": 51.6
+      },
+      "2023": {
+        "text": 51.3,
+        "vision": 48.4,
+        "total": 49.8
+      }
+    }
+  },
+  "Ministral-3-8B-Instruct-2512": {
+    "type": "general",
+    "source": "Mistral AI",
+    "is_reasoning": false,
+    "size": 8,
+    "link": "https://huggingface.co/mistralai/Ministral-3-8B-Instruct-2512-BF16",
+    "kormedmcqa_v": {
+      "overall": 53.8,
+      "modality": {
+        "xray": 55.1,
+        "ct": 43.9,
+        "ecg": 53.4,
+        "us": 58.5,
+        "endoscopy": 51.4,
+        "nst": 47.1,
+        "pbs": 52.7,
+        "mri": 56.8,
+        "other": 56.7
+      },
+      "by_image_count": {
+        "1": 55.5,
+        "2": 50.4,
+        "3+": 44.4
+      }
+    },
+    "kormedmcqa_mixed": {
+      "2022": {
+        "text": 58.3,
+        "vision": 48.2,
+        "total": 53.0
+      },
+      "2023": {
+        "text": 55.6,
+        "vision": 59.4,
+        "total": 57.5
+      }
+    }
+  },
+  "Ministral-3-8B-Reasoning-2512": {
+    "type": "general",
+    "source": "Mistral AI",
+    "is_reasoning": true,
+    "size": 8,
+    "link": "https://huggingface.co/mistralai/Ministral-3-8B-Reasoning-2512",
+    "kormedmcqa_v": {
+      "overall": 65.1,
+      "modality": {
+        "xray": 64.0,
+        "ct": 62.0,
+        "ecg": 66.7,
+        "us": 66.4,
+        "endoscopy": 59.8,
+        "nst": 57.2,
+        "pbs": 68.2,
+        "mri": 71.6,
+        "other": 68.0
+      },
+      "by_image_count": {
+        "1": 66.2,
+        "2": 62.9,
+        "3+": 59.0
+      }
+    },
+    "kormedmcqa_mixed": {
+      "2022": {
+        "text": 74.3,
+        "vision": 58.0,
+        "total": 65.8
+      },
+      "2023": {
+        "text": 72.2,
+        "vision": 64.5,
+        "total": 68.3
+      }
+    }
+  },
+  "Qwen2.5-VL-32B-Instruct": {
+    "type": "general",
+    "source": "Alibaba",
+    "is_reasoning": false,
+    "size": 32,
+    "link": "https://huggingface.co/Qwen/Qwen2.5-VL-32B-Instruct",
+    "kormedmcqa_v": {
+      "overall": 63.0,
+      "modality": {
+        "xray": 62.3,
+        "ct": 56.9,
+        "ecg": 71.8,
+        "us": 64.5,
+        "endoscopy": 59.1,
+        "nst": 52.2,
+        "pbs": 67.4,
+        "mri": 70.4,
+        "other": 65.2
+      },
+      "by_image_count": {
+        "1": 64.0,
+        "2": 61.4,
+        "3+": 54.7
+      }
+    },
+    "kormedmcqa_mixed": {
+      "2022": {
+        "text": 59.8,
+        "vision": 56.2,
+        "total": 57.9
+      },
+      "2023": {
+        "text": 66.2,
+        "vision": 66.2,
+        "total": 66.2
+      }
+    }
+  },
+  "Qwen2.5-VL-7B-Instruct": {
+    "type": "general",
+    "source": "Alibaba",
+    "is_reasoning": false,
+    "size": 7,
+    "link": "https://huggingface.co/Qwen/Qwen2.5-VL-7B-Instruct",
+    "kormedmcqa_v": {
+      "overall": 46.6,
+      "modality": {
+        "xray": 46.9,
+        "ct": 42.7,
+        "ecg": 50.0,
+        "us": 41.5,
+        "endoscopy": 42.8,
+        "nst": 43.5,
+        "pbs": 39.5,
+        "mri": 44.4,
+        "other": 50.1
+      },
+      "by_image_count": {
+        "1": 46.8,
+        "2": 45.4,
+        "3+": 52.1
+      }
+    },
+    "kormedmcqa_mixed": {
+      "2022": {
+        "text": 48.6,
+        "vision": 39.3,
+        "total": 43.8
+      },
+      "2023": {
+        "text": 47.8,
+        "vision": 50.7,
+        "total": 49.3
+      }
+    }
+  },
+  "Qwen3-VL-2B-Instruct": {
+    "type": "general",
+    "source": "Alibaba",
+    "is_reasoning": false,
+    "size": 2,
+    "link": "https://huggingface.co/Qwen/Qwen3-VL-2B-Instruct",
+    "kormedmcqa_v": {
+      "overall": 31.3,
+      "modality": {
+        "xray": 33.0,
+        "ct": 29.9,
+        "ecg": 30.3,
+        "us": 29.6,
+        "endoscopy": 34.4,
+        "nst": 34.8,
+        "pbs": 17.1,
+        "mri": 27.2,
+        "other": 31.5
+      },
+      "by_image_count": {
+        "1": 31.3,
+        "2": 31.1,
+        "3+": 34.2
+      }
+    },
+    "kormedmcqa_mixed": {
+      "2022": {
+        "text": 28.4,
+        "vision": 37.4,
+        "total": 33.1
+      },
+      "2023": {
+        "text": 32.0,
+        "vision": 30.4,
+        "total": 31.2
+      }
+    }
+  },
+  "Qwen3-VL-2B-Thinking": {
+    "type": "general",
+    "source": "Alibaba",
+    "is_reasoning": true,
+    "size": 2,
+    "link": "https://huggingface.co/Qwen/Qwen3-VL-2B-Instruct",
+    "kormedmcqa_v": {
+      "overall": 40.4,
+      "modality": {
+        "xray": 40.8,
+        "ct": 36.8,
+        "ecg": 43.9,
+        "us": 41.2,
+        "endoscopy": 43.5,
+        "nst": 29.7,
+        "pbs": 38.8,
+        "mri": 35.8,
+        "other": 41.3
+      },
+      "by_image_count": {
+        "1": 41.9,
+        "2": 37.5,
+        "3+": 29.9
+      }
+    },
+    "kormedmcqa_mixed": {
+      "2022": {
+        "text": 50.4,
+        "vision": 38.6,
+        "total": 44.2
+      },
+      "2023": {
+        "text": 44.7,
+        "vision": 42.7,
+        "total": 43.6
+      }
+    }
+  },
+  "Qwen3-VL-30B-A3B-Instruct": {
+    "type": "general",
+    "source": "Alibaba",
+    "is_reasoning": false,
+    "size": 30,
+    "link": "https://huggingface.co/Qwen/Qwen3-VL-30B-A3B",
+    "kormedmcqa_v": {
+      "overall": 71.7,
+      "modality": {
+        "xray": 72.2,
+        "ct": 63.7,
+        "ecg": 75.5,
+        "us": 70.1,
+        "endoscopy": 65.9,
+        "nst": 63.0,
+        "pbs": 72.9,
+        "mri": 76.5,
+        "other": 75.5
+      },
+      "by_image_count": {
+        "1": 72.3,
+        "2": 71.0,
+        "3+": 62.4
+      }
+    },
+    "kormedmcqa_mixed": {
+      "2022": {
+        "text": 67.9,
+        "vision": 68.9,
+        "total": 68.4
+      },
+      "2023": {
+        "text": 68.9,
+        "vision": 74.1,
+        "total": 71.6
+      }
+    }
+  },
+  "Qwen3-VL-30B-A3B-Thinking": {
+    "type": "general",
+    "source": "Alibaba",
+    "is_reasoning": true,
+    "size": 30,
+    "link": "https://huggingface.co/Qwen/Qwen3-VL-30B-A3B",
+    "kormedmcqa_v": {
+      "overall": 80.4,
+      "modality": {
+        "xray": 80.7,
+        "ct": 73.8,
+        "ecg": 82.3,
+        "us": 81.1,
+        "endoscopy": 75.4,
+        "nst": 70.3,
+        "pbs": 90.7,
+        "mri": 87.7,
+        "other": 83.0
+      },
+      "by_image_count": {
+        "1": 81.7,
+        "2": 78.3,
+        "3+": 67.5
+      }
+    },
+    "kormedmcqa_mixed": {
+      "2022": {
+        "text": 80.7,
+        "vision": 79.5,
+        "total": 80.1
+      },
+      "2023": {
+        "text": 84.2,
+        "vision": 81.5,
+        "total": 82.8
+      }
+    }
+  },
+  "Qwen3-VL-32B-Instruct": {
+    "type": "general",
+    "source": "Alibaba",
+    "is_reasoning": false,
+    "size": 32,
+    "link": "https://huggingface.co/Qwen/Qwen3-VL-32B-Instruct",
+    "kormedmcqa_v": {
+      "overall": 76.5,
+      "modality": {
+        "xray": 75.9,
+        "ct": 71.9,
+        "ecg": 83.3,
+        "us": 77.0,
+        "endoscopy": 67.8,
+        "nst": 64.5,
+        "pbs": 86.0,
+        "mri": 85.2,
+        "other": 79.1
+      },
+      "by_image_count": {
+        "1": 77.9,
+        "2": 74.5,
+        "3+": 61.5
+      }
+    },
+    "kormedmcqa_mixed": {
+      "2022": {
+        "text": 71.9,
+        "vision": 71.9,
+        "total": 71.9
+      },
+      "2023": {
+        "text": 80.2,
+        "vision": 79.8,
+        "total": 80.0
+      }
+    }
+  },
+  "Qwen3-VL-32B-Thinking": {
+    "type": "general",
+    "source": "Alibaba",
+    "is_reasoning": true,
+    "size": 32,
+    "link": "https://huggingface.co/Qwen/Qwen3-VL-32B-Instruct",
+    "kormedmcqa_v": {
+      "overall": 83.7,
+      "modality": {
+        "xray": 83.9,
+        "ct": 78.0,
+        "ecg": 86.4,
+        "us": 81.1,
+        "endoscopy": 76.4,
+        "nst": 71.7,
+        "pbs": 95.3,
+        "mri": 88.9,
+        "other": 87.0
+      },
+      "by_image_count": {
+        "1": 85.2,
+        "2": 80.5,
+        "3+": 76.9
+      }
+    },
+    "kormedmcqa_mixed": {
+      "2022": {
+        "text": 84.2,
+        "vision": 79.7,
+        "total": 81.9
+      },
+      "2023": {
+        "text": 88.0,
+        "vision": 84.9,
+        "total": 86.4
+      }
+    }
+  },
+  "Qwen3-VL-4B-Instruct": {
+    "type": "general",
+    "source": "Alibaba",
+    "is_reasoning": false,
+    "size": 4,
+    "link": "https://huggingface.co/Qwen/Qwen3-VL-4B-Instruct",
+    "kormedmcqa_v": {
+      "overall": 45.7,
+      "modality": {
+        "xray": 41.7,
+        "ct": 42.0,
+        "ecg": 53.1,
+        "us": 41.2,
+        "endoscopy": 47.5,
+        "nst": 46.4,
+        "pbs": 46.5,
+        "mri": 35.8,
+        "other": 50.9
+      },
+      "by_image_count": {
+        "1": 47.1,
+        "2": 43.3,
+        "3+": 32.5
+      }
+    },
+    "kormedmcqa_mixed": {
+      "2022": {
+        "text": 46.4,
+        "vision": 41.3,
+        "total": 43.8
+      },
+      "2023": {
+        "text": 50.0,
+        "vision": 47.6,
+        "total": 48.8
+      }
+    }
+  },
+  "Qwen3-VL-4B-Thinking": {
+    "type": "general",
+    "source": "Alibaba",
+    "is_reasoning": true,
+    "size": 4,
+    "link": "https://huggingface.co/Qwen/Qwen3-VL-4B-Instruct",
+    "kormedmcqa_v": {
+      "overall": 65.9,
+      "modality": {
+        "xray": 63.1,
+        "ct": 64.1,
+        "ecg": 70.4,
+        "us": 68.2,
+        "endoscopy": 66.3,
+        "nst": 46.4,
+        "pbs": 82.2,
+        "mri": 60.5,
+        "other": 68.7
+      },
+      "by_image_count": {
+        "1": 68.1,
+        "2": 61.5,
+        "3+": 54.7
+      }
+    },
+    "kormedmcqa_mixed": {
+      "2022": {
+        "text": 70.9,
+        "vision": 63.7,
+        "total": 67.1
+      },
+      "2023": {
+        "text": 71.6,
+        "vision": 66.5,
+        "total": 68.9
+      }
+    }
+  },
+  "Qwen3-VL-8B-Instruct": {
+    "type": "general",
+    "source": "Alibaba",
+    "is_reasoning": false,
+    "size": 8,
+    "link": "https://huggingface.co/Qwen/Qwen3-VL-8B-Instruct",
+    "kormedmcqa_v": {
+      "overall": 53.8,
+      "modality": {
+        "xray": 50.4,
+        "ct": 46.5,
+        "ecg": 56.8,
+        "us": 55.3,
+        "endoscopy": 51.1,
+        "nst": 50.7,
+        "pbs": 46.5,
+        "mri": 55.6,
+        "other": 60.8
+      },
+      "by_image_count": {
+        "1": 55.9,
+        "2": 49.1,
+        "3+": 47.9
+      }
+    },
+    "kormedmcqa_mixed": {
+      "2022": {
+        "text": 56.8,
+        "vision": 53.4,
+        "total": 55.0
+      },
+      "2023": {
+        "text": 53.6,
+        "vision": 53.5,
+        "total": 53.5
+      }
+    }
+  },
+  "Qwen3-VL-8B-Thinking": {
+    "type": "general",
+    "source": "Alibaba",
+    "is_reasoning": true,
+    "size": 8,
+    "link": "https://huggingface.co/Qwen/Qwen3-VL-8B-Instruct",
+    "kormedmcqa_v": {
+      "overall": 74.2,
+      "modality": {
+        "xray": 75.1,
+        "ct": 67.9,
+        "ecg": 74.8,
+        "us": 76.7,
+        "endoscopy": 69.6,
+        "nst": 68.8,
+        "pbs": 84.5,
+        "mri": 72.8,
+        "other": 75.8
+      },
+      "by_image_count": {
+        "1": 75.7,
+        "2": 71.4,
+        "3+": 65.8
+      }
+    },
+    "kormedmcqa_mixed": {
+      "2022": {
+        "text": 76.5,
+        "vision": 73.7,
+        "total": 75.1
+      },
+      "2023": {
+        "text": 80.0,
+        "vision": 77.5,
+        "total": 78.7
+      }
+    }
+  },
+  "VARCO-VISION-2.0-1.7B": {
+    "type": "korean",
+    "source": "NCSoft",
+    "is_reasoning": false,
+    "size": 1.7,
+    "link": "https://huggingface.co/NCSOFT/VARCO-VISION-2.0-1.7B",
+    "kormedmcqa_v": {
+      "overall": 24.4,
+      "modality": {
+        "xray": 24.6,
+        "ct": 21.9,
+        "ecg": 24.5,
+        "us": 21.7,
+        "endoscopy": 20.7,
+        "nst": 28.3,
+        "pbs": 18.6,
+        "mri": 22.2,
+        "other": 26.8
+      },
+      "by_image_count": {
+        "1": 24.9,
+        "2": 23.7,
+        "3+": 17.9
+      }
+    },
+    "kormedmcqa_mixed": {
+      "2022": {
+        "text": 35.6,
+        "vision": 28.8,
+        "total": 32.0
+      },
+      "2023": {
+        "text": 34.7,
+        "vision": 26.8,
+        "total": 30.6
+      }
+    }
+  },
+  "VARCO-VISION-2.0-14B": {
+    "type": "korean",
+    "source": "NCSoft",
+    "is_reasoning": false,
+    "size": 14,
+    "link": "https://huggingface.co/NCSOFT/VARCO-VISION-2.0-14B",
+    "kormedmcqa_v": {
+      "overall": 43.2,
+      "modality": {
+        "xray": 42.4,
+        "ct": 35.4,
+        "ecg": 46.3,
+        "us": 39.6,
+        "endoscopy": 41.3,
+        "nst": 32.6,
+        "pbs": 48.1,
+        "mri": 44.4,
+        "other": 48.5
+      },
+      "by_image_count": {
+        "1": 43.7,
+        "2": 43.0,
+        "3+": 33.3
+      }
+    },
+    "kormedmcqa_mixed": {
+      "2022": {
+        "text": 59.3,
+        "vision": 46.6,
+        "total": 52.7
+      },
+      "2023": {
+        "text": 57.3,
+        "vision": 45.9,
+        "total": 51.5
+      }
+    }
+  },
+  "Gemini-3.0-Flash": {
+    "type": "proprietary",
+    "source": "Google API",
+    "is_reasoning": true,
+    "size": null,
+    "link": null,
+    "kormedmcqa_v": {
+      "overall": 96.9,
+      "modality": {
+        "xray": 96.2,
+        "ct": 97.9,
+        "ecg": 93.9,
+        "us": 96.2,
+        "endoscopy": 94.6,
+        "nst": 93.5,
+        "pbs": 100.0,
+        "mri": 100.0,
+        "other": 98.3
+      },
+      "by_image_count": {
+        "1": 97.6,
+        "2": 95.5,
+        "3+": 92.3
+      }
+    },
+    "kormedmcqa_mixed": {
+      "2022": {
+        "text": 97.0,
+        "vision": 95.2,
+        "total": 96.1
+      },
+      "2023": {
+        "text": 98.0,
+        "vision": 94.9,
+        "total": 96.4
+      }
+    }
+  },
+  "Gemini-3.0-Pro": {
+    "type": "proprietary",
+    "source": "Google API",
+    "is_reasoning": true,
+    "size": null,
+    "link": null,
+    "kormedmcqa_v": {
+      "overall": 96.9,
+      "modality": {
+        "xray": 97.0,
+        "ct": 97.9,
+        "ecg": 95.9,
+        "us": 97.2,
+        "endoscopy": 93.5,
+        "nst": 91.3,
+        "pbs": 100.0,
+        "mri": 100.0,
+        "other": 97.4
+      },
+      "by_image_count": {
+        "1": 97.7,
+        "2": 96.0,
+        "3+": 87.2
+      }
+    },
+    "kormedmcqa_mixed": {
+      "2022": {
+        "text": 98.5,
+        "vision": 97.3,
+        "total": 97.9
+      },
+      "2023": {
+        "text": 99.3,
+        "vision": 94.3,
+        "total": 96.7
+      }
+    }
+  },
+  "GPT-5": {
+    "type": "proprietary",
+    "source": "OpenAI API",
+    "is_reasoning": true,
+    "size": null,
+    "link": null,
+    "kormedmcqa_v": {
+      "overall": 93.9,
+      "modality": {
+        "xray": 93.6,
+        "ct": 89.1,
+        "ecg": 89.8,
+        "us": 97.2,
+        "endoscopy": 92.4,
+        "nst": 87.0,
+        "pbs": 100.0,
+        "mri": 100.0,
+        "other": 96.3
+      },
+      "by_image_count": {
+        "1": 94.7,
+        "2": 92.0,
+        "3+": 92.3
+      }
+    },
+    "kormedmcqa_mixed": {
+      "2022": {
+        "text": 95.6,
+        "vision": 89.7,
+        "total": 92.5
+      },
+      "2023": {
+        "text": 98.0,
+        "vision": 91.1,
+        "total": 94.5
+      }
+    }
+  },
+  "GPT-5-mini": {
+    "type": "proprietary",
+    "source": "OpenAI API",
+    "is_reasoning": true,
+    "size": null,
+    "link": null,
+    "kormedmcqa_v": {
+      "overall": 90.1,
+      "modality": {
+        "xray": 89.1,
+        "ct": 85.4,
+        "ecg": 85.7,
+        "us": 90.6,
+        "endoscopy": 88.0,
+        "nst": 89.1,
+        "pbs": 97.7,
+        "mri": 96.3,
+        "other": 93.3
+      },
+      "by_image_count": {
+        "1": 91.3,
+        "2": 87.3,
+        "3+": 87.2
+      }
+    },
+    "kormedmcqa_mixed": {
+      "2022": {
+        "text": 91.9,
+        "vision": 90.4,
+        "total": 91.1
+      },
+      "2023": {
+        "text": 93.3,
+        "vision": 92.4,
+        "total": 92.8
+      }
+    }
+  },
+  "GPT-5.2": {
+    "type": "proprietary",
+    "source": "OpenAI API",
+    "is_reasoning": true,
+    "size": null,
+    "link": null,
+    "kormedmcqa_v": {
+      "overall": 93.9,
+      "modality": {
+        "xray": 94.2,
+        "ct": 89.6,
+        "ecg": 92.9,
+        "us": 98.1,
+        "endoscopy": 90.2,
+        "nst": 84.8,
+        "pbs": 100.0,
+        "mri": 96.3,
+        "other": 95.5
+      },
+      "by_image_count": {
+        "1": 94.7,
+        "2": 92.7,
+        "3+": 84.6
+      }
+    },
+    "kormedmcqa_mixed": {
+      "2022": {
+        "text": 95.6,
+        "vision": 91.8,
+        "total": 93.6
+      },
+      "2023": {
+        "text": 97.3,
+        "vision": 92.4,
+        "total": 94.8
+      }
+    }
+  },
+  "Kanana-1.5-V-3B-Instruct": {
+    "type": "korean",
+    "source": "Kakao",
+    "is_reasoning": false,
+    "size": 3,
+    "link": "https://huggingface.co/kakaocorp/kanana-1.5-v-3b-instruct",
+    "kormedmcqa_v": {
+      "overall": 30.7,
+      "modality": {
+        "xray": 28.6,
+        "ct": 27.1,
+        "ecg": 27.6,
+        "us": 27.4,
+        "endoscopy": 26.1,
+        "nst": 34.8,
+        "pbs": 25.6,
+        "mri": 29.6,
+        "other": 36.8
+      },
+      "by_image_count": {
+        "1": 30.7,
+        "2": 30.8,
+        "3+": 30.8
+      }
+    },
+    "kormedmcqa_mixed": {
+      "2022": {
+        "text": 37.0,
+        "vision": 30.8,
+        "total": 33.8
+      },
+      "2023": {
+        "text": 41.3,
+        "vision": 34.4,
+        "total": 37.8
+      }
+    }
+  }
+}

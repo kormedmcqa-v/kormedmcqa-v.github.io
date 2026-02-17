@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KorMedMCQA-V Leaderboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.5.1/dist/echarts.min.js"></script>
+  <style>
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
+      background-color: #f8fafc;
+      color: #1e293b;
+    }
+    #content { width: 75%; }
+
+    /* Table */
+    #lb-table {
+      border-collapse: separate;
+      border-spacing: 0;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+      border: 1px solid #e2e8f0;
+      font-size: 0.9em;
+    }
+    #lb-table thead th {
+      background: #1e293b;
+      color: #f1f5f9;
+      font-weight: 600;
+      font-size: 0.85em;
+      padding: 0.65rem 0.75rem;
+      border: none;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      cursor: pointer;
+      user-select: none;
+      text-align: left;
+      white-space: nowrap;
+    }
+    #lb-table thead th:hover { background: #334155; }
+    #lb-table tbody td {
+      padding: 0.55rem 0.75rem;
+      border-bottom: 1px solid #f1f5f9;
+      text-align: left;
+      vertical-align: middle;
+    }
+    #lb-table tbody tr:hover { background: #f1f5f9; }
+    #lb-table tbody tr:last-child td { border-bottom: none; }
+
+    td.rank-cell { font-weight: 600; text-align: center; width: 3rem; color: #94a3b8; }
+    td.acc-cell { text-align: right; font-variant-numeric: tabular-nums; }
+    .size-cell { color: #94a3b8; font-size: 0.9em; }
+    .sort-arrow { font-size: 0.6rem; margin-left: 3px; opacity: 0.7; }
+
+    /* Badges */
+    .type-badge {
+      font-size: 0.72em;
+      padding: 0.2rem 0.5rem;
+      border-radius: 6px;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+    }
+    .badge-proprietary { background: #ede9fe; color: #7c3aed; }
+    .badge-general { background: #dbeafe; color: #2563eb; }
+    .badge-medical { background: #d1fae5; color: #059669; }
+    .badge-korean { background: #fee2e2; color: #dc2626; }
+
+    /* Links */
+    .model-link { text-decoration: none; color: #1e293b; font-weight: 500; }
+    .model-link:hover { text-decoration: underline; color: #2563eb; }
+
+    /* Section label */
+    .section-label {
+      font-size: 0.8em;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #94a3b8;
+    }
+
+    /* Footer */
+    .footer {
+      text-align: center;
+      padding: 2.5rem 0 1.5rem;
+      font-size: 0.8em;
+      color: #94a3b8;
+      border-top: 1px solid #e2e8f0;
+      margin-top: 2rem;
+    }
+
+    /* Benchmark buttons */
+    #benchmark-btns .btn-outline-primary {
+      border-color: #cbd5e1;
+      color: #475569;
+      font-size: 0.85em;
+      font-weight: 500;
+    }
+    #benchmark-btns .btn-check:checked + .btn-outline-primary {
+      background: #1e293b;
+      border-color: #1e293b;
+      color: #fff;
+    }
+
+    /* Sub-metric columns */
+    td.sub-cell {
+      text-align: right;
+      font-variant-numeric: tabular-nums;
+      color: #64748b;
+      font-size: 0.92em;
+    }
+    #lb-table thead th.sub-th {
+      background: #334155;
+      font-size: 0.78em;
+      font-weight: 500;
+    }
+    /* Gap bar */
+    .gap-cell {
+      text-align: center;
+      font-variant-numeric: tabular-nums;
+      font-size: 0.82em;
+      white-space: nowrap;
+    }
+    .gap-bar-wrap {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      width: 100%;
+    }
+    .gap-bar-track {
+      position: relative;
+      width: 100px;
+      height: 14px;
+      background: #f1f5f9;
+      border-radius: 3px;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+    .gap-bar-center {
+      position: absolute;
+      left: 50%;
+      top: 0;
+      bottom: 0;
+      width: 1px;
+      background: #cbd5e1;
+    }
+    .gap-bar-fill {
+      position: absolute;
+      top: 2px;
+      bottom: 2px;
+      border-radius: 2px;
+    }
+    .table-scroll-wrapper {
+      width: 100%;
+      overflow-x: auto;
+    }
+
+    @media screen and (max-width: 1400px) {
+      body { font-size: 1.6vw; }
+      #content { width: 100%; }
+      h1 { font-size: 2em; }
+      h3 { font-size: 1.2em; }
+      #lb-table { font-size: small; }
+    }
+  </style>
+</head>
+<body>
+
+<div id="content" class="container-fluid d-flex flex-column align-items-center gap-3">
+  <h1 class="text-nowrap mt-5" style="font-weight:700; color:#0f172a;">KorMedMCQA-V Leaderboard</h1>
+  <p class="text-nowrap mb-1" style="color:#64748b; font-size:0.95em;">
+    Multimodal Benchmark for Evaluating VLMs on the Korean Medical Licensing Examination
+  </p>
+  <div class="d-flex flex-row justify-content-center gap-3">
+    <a href="paper.pdf"><img src="https://img.shields.io/badge/Paper-PDF-b31b1b.svg?style=for-the-badge" alt="Paper" class="img-fluid"></a>
+    <a href="https://huggingface.co/datasets/seongsubae/KorMedMCQA-V"><img src="https://img.shields.io/badge/Dataset-HuggingFace-ffd21e.svg?style=for-the-badge" alt="Dataset" class="img-fluid"></a>
+    <a href="https://github.com/seongsubae/KorMedMCQA-V"><img src="https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" class="img-fluid"></a>
+  </div>
+
+  <div style="max-width:720px; text-align:center; color:#64748b; font-size:0.78em; line-height:1.6;">
+    <strong>KorMedMCQA-V</strong> evaluates over 50 VLMs on 1,534 questions with 2,043 associated images
+    from the Korean Medical Licensing Examination (2012–2023),
+    covering X-ray, CT, ECG, ultrasound, endoscopy, and more.
+    <br>
+    <strong>KorMedMCQA-Mixed</strong> combines text-only and vision questions
+    from specific exam years for unified evaluation.
+    <br>
+    All models are evaluated under a <strong>zero-shot</strong> protocol;
+    accuracy is the primary metric.
+  </div>
+
+  <!-- Benchmark Selector -->
+  <div class="btn-group" role="group" id="benchmark-btns">
+    <input type="radio" class="btn-check" name="bench" id="bench-v" value="v_overall" checked autocomplete="off">
+    <label class="btn btn-outline-primary" for="bench-v">KorMedMCQA-V</label>
+    <input type="radio" class="btn-check" name="bench" id="bench-2022" value="mixed_2022" autocomplete="off">
+    <label class="btn btn-outline-primary" for="bench-2022">KorMedMCQA-Mixed-2022</label>
+    <input type="radio" class="btn-check" name="bench" id="bench-2023" value="mixed_2023" autocomplete="off">
+    <label class="btn btn-outline-primary" for="bench-2023">KorMedMCQA-Mixed-2023</label>
+  </div>
+
+  <!-- Chart -->
+  <div style="position:relative; width:100%;">
+    <div id="chart-container" style="width: 100%; height: 600px;"></div>
+    <div id="shape-legend" class="d-flex gap-3" style="position:absolute; top:2px; right:12px; font-size:0.8em; color:#64748b;">
+      <span data-cat="reasoning" style="cursor:pointer;">▲ Reasoning</span>
+      <span data-cat="instruct" style="cursor:pointer;">● Instruct</span>
+    </div>
+  </div>
+
+  <!-- Table -->
+  <div class="container-fluid d-flex flex-column align-items-center">
+    <label class="section-label mt-4 mb-3">Results</label>
+    <div class="table-scroll-wrapper">
+    <table class="table flex-shrink-1" id="lb-table">
+      <thead id="lb-head"></thead>
+      <tbody id="lb-body"></tbody>
+    </table>
+    </div>
+  </div>
+
+</div>
+
+<div class="footer">
+  KorMedMCQA-V &copy; 2026 &middot; Code: MIT &middot; Dataset: CC BY-NC-SA 4.0
+  <br>Inspired by <a href="https://evalplus.github.io/leaderboard.html" style="color:#94a3b8;">EvalPlus Leaderboard</a>
+</div>
+
+<script>
+(function(){
+  const TYPE_COLORS = {
+    proprietary: '#7c3aed',
+    general: '#2563eb',
+    medical: '#059669',
+    korean: '#dc2626'
+  };
+  const TYPE_LABELS = {
+    proprietary: 'Proprietary',
+    general: 'General',
+    medical: 'Medical',
+    korean: 'Korean'
+  };
+  const BADGE_CLASS = {
+    proprietary: 'badge-proprietary',
+    general: 'badge-general',
+    medical: 'badge-medical',
+    korean: 'badge-korean'
+  };
+  const CATEGORY_SYMBOLS = {
+    reasoning: 'triangle',
+    instruct: 'circle'
+  };
+
+  function getModelCategory(name) {
+    const entry = DATA[name];
+    return entry && entry.is_reasoning ? 'reasoning' : 'instruct';
+  }
+
+  let DATA = {};
+  let currentBench = 'v_overall';
+  let activeTypes = new Set(['proprietary','general','medical','korean']);
+  let activeCategories = new Set(['reasoning','instruct']);
+  let sortCol = 'accuracy';
+  let sortAsc = false;
+  let chart = null;
+
+  function getAccuracy(entry, bench) {
+    if (bench === 'v_overall') return entry.kormedmcqa_v?.overall ?? null;
+    if (bench === 'mixed_2022') return entry.kormedmcqa_mixed?.['2022']?.total ?? null;
+    if (bench === 'mixed_2023') return entry.kormedmcqa_mixed?.['2023']?.total ?? null;
+    return null;
+  }
+
+  function getFilteredModels() {
+    return Object.entries(DATA)
+      .filter(([name, e]) => activeTypes.has(e.type) && activeCategories.has(getModelCategory(name)))
+      .map(([name, e]) => ({ name, ...e, accuracy: getAccuracy(e, currentBench) }))
+      .filter(m => m.accuracy !== null);
+  }
+
+  function sortModels(models) {
+    const dir = sortAsc ? 1 : -1;
+    return models.sort((a, b) => {
+      if (sortCol === 'name') return dir * a.name.localeCompare(b.name);
+      if (sortCol === 'type') return dir * a.type.localeCompare(b.type);
+      if (sortCol === 'size') {
+        const sa = a.size ?? -1, sb = b.size ?? -1;
+        return dir * (sa - sb);
+      }
+      if (sortCol === 'accuracy' || sortCol === 'rank') return dir * (a.accuracy - b.accuracy);
+      // Sub-column sorting
+      const ea = DATA[a.name], eb = DATA[b.name];
+      if (ea && eb) {
+        const va = getSubValue(ea, currentBench, sortCol) ?? -1;
+        const vb = getSubValue(eb, currentBench, sortCol) ?? -1;
+        return dir * (va - vb);
+      }
+      return 0;
+    });
+  }
+
+  const MODALITY_KEYS = ['xray','ct','ecg','us','endoscopy','nst','pbs','mri','other'];
+  const MODALITY_LABELS = {
+    xray: 'X-ray', ct: 'CT', ecg: 'ECG', us: 'US',
+    endoscopy: 'Endo.', nst: 'NST', pbs: 'PBS', mri: 'MRI', other: 'Other'
+  };
+  const IMG_COUNT_KEYS = ['1','2','3+'];
+
+  function getSubColumns(bench) {
+    if (bench === 'v_overall') {
+      return [
+        ...MODALITY_KEYS.map(k => ({ key: 'mod_' + k, label: MODALITY_LABELS[k] })),
+        ...IMG_COUNT_KEYS.map(k => ({ key: 'img_' + k, label: k + ' img' }))
+      ];
+    }
+    return [
+      { key: 'text', label: 'Text' },
+      { key: 'vision', label: 'Vision' }
+    ];
+  }
+
+  function getSubValue(entry, bench, col) {
+    if (bench === 'v_overall') {
+      if (col.startsWith('mod_')) return entry.kormedmcqa_v?.modality?.[col.slice(4)] ?? null;
+      if (col.startsWith('img_')) return entry.kormedmcqa_v?.by_image_count?.[col.slice(4)] ?? null;
+    } else {
+      const year = bench === 'mixed_2022' ? '2022' : '2023';
+      if (col === 'gap') {
+        const t = entry.kormedmcqa_mixed?.[year]?.text;
+        const v = entry.kormedmcqa_mixed?.[year]?.vision;
+        return (t != null && v != null) ? t - v : null;
+      }
+      return entry.kormedmcqa_mixed?.[year]?.[col] ?? null;
+    }
+    return null;
+  }
+
+  function renderHeader() {
+    const thead = document.getElementById('lb-head');
+    const baseCols = [
+      { sort: 'rank', label: '#' },
+      { sort: 'name', label: 'Model' },
+      { sort: 'type', label: 'Type' },
+      { sort: 'size', label: 'Size' },
+      { sort: 'accuracy', label: 'Accuracy' }
+    ];
+    const subCols = getSubColumns(currentBench);
+    thead.innerHTML = '<tr>' +
+      baseCols.map(c => `<th data-sort="${c.sort}">${c.label} <span class="sort-arrow"></span></th>`).join('') +
+      subCols.map(c => `<th class="sub-th" data-sort="${c.key}">${c.label} <span class="sort-arrow"></span></th>`).join('') +
+      '</tr>';
+    // Re-bind sort listeners
+    thead.querySelectorAll('th').forEach(th => {
+      th.addEventListener('click', () => {
+        const col = th.dataset.sort;
+        if (sortCol === col) sortAsc = !sortAsc;
+        else { sortCol = col; sortAsc = col === 'name' || col === 'type'; }
+        renderTable();
+      });
+    });
+  }
+
+  function renderTable() {
+    let models = getFilteredModels();
+    models = sortModels(models);
+
+    // Assign ranks (by accuracy descending)
+    const ranked = [...models].sort((a,b) => b.accuracy - a.accuracy);
+    const rankMap = {};
+    let r = 1;
+    for (let i = 0; i < ranked.length; i++) {
+      if (i > 0 && ranked[i].accuracy < ranked[i-1].accuracy) r = i + 1;
+      rankMap[ranked[i].name] = r;
+    }
+
+    renderHeader();
+    const subCols = getSubColumns(currentBench);
+
+    // Compute gap range for bar scaling (mixed benchmarks only)
+    let gapMax = 1;
+    if (currentBench !== 'v_overall') {
+      const gaps = models.map(m => {
+        const v = getSubValue(DATA[m.name], currentBench, 'gap');
+        return v != null ? Math.abs(v) : 0;
+      });
+      gapMax = Math.max(...gaps, 1);
+    }
+
+    const tbody = document.getElementById('lb-body');
+    tbody.innerHTML = models.map(m => {
+      const rank = rankMap[m.name];
+      const nameHtml = m.link
+        ? `<a class="model-link link-underline-primary text-nowrap" href="${m.link}" target="_blank">${m.name}</a>`
+        : `<span class="text-nowrap" style="font-weight:500">${m.name}</span>`;
+      const sizeStr = m.size != null ? `${m.size}B` : '-';
+      const entry = DATA[m.name];
+      const subTds = subCols.map(c => {
+        const v = getSubValue(entry, currentBench, c.key);
+        if (v == null) return '<td class="sub-cell">-</td>';
+        if (c.key === 'gap') {
+          const sign = v > 0 ? '+' : '';
+          const color = v > 0 ? '#dc2626' : v < 0 ? '#2563eb' : '#94a3b8';
+          const pct = Math.abs(v) / gapMax * 50;
+          const left = v < 0 ? (50 - pct) : 50;
+          return `<td class="gap-cell">
+            <div class="gap-bar-wrap">
+              <div class="gap-bar-track">
+                <div class="gap-bar-center"></div>
+                <div class="gap-bar-fill" style="left:${left}%;width:${pct}%;background:${color};"></div>
+              </div>
+              <span style="color:${color};min-width:3.2em;text-align:right;">${sign}${v.toFixed(1)}</span>
+            </div>
+          </td>`;
+        }
+        return `<td class="sub-cell">${v.toFixed(1)}</td>`;
+      }).join('');
+      return `<tr>
+        <td class="rank-cell">${rank}</td>
+        <td class="text-nowrap">${nameHtml}</td>
+        <td><span class="type-badge ${BADGE_CLASS[m.type]}">${TYPE_LABELS[m.type]}</span></td>
+        <td class="size-cell">${sizeStr}</td>
+        <td class="acc-cell"><strong>${m.accuracy.toFixed(1)}</strong></td>
+        ${subTds}
+      </tr>`;
+    }).join('');
+
+    // Update sort arrows
+    document.querySelectorAll('#lb-table th').forEach(th => {
+      const col = th.dataset.sort;
+      const arrow = th.querySelector('.sort-arrow');
+      if (col === sortCol) {
+        arrow.textContent = sortAsc ? ' ▲' : ' ▼';
+      } else {
+        arrow.textContent = '';
+      }
+    });
+
+    renderChart(models);
+  }
+
+  function renderChart(models) {
+    if (!chart) {
+      chart = echarts.init(document.getElementById('chart-container'));
+      window.addEventListener('resize', () => chart.resize());
+      // Legend click → filter table
+      const labelToType = {};
+      Object.entries(TYPE_LABELS).forEach(([k,v]) => labelToType[v] = k);
+      chart.on('legendselectchanged', function(params) {
+        activeTypes = new Set(
+          Object.entries(params.selected)
+            .filter(([,v]) => v)
+            .map(([k]) => labelToType[k])
+        );
+        renderTable();
+      });
+    }
+
+    // Save current legend selection state before re-render
+    const currentOption = chart.getOption();
+    const legendSelected = currentOption?.legend?.[0]?.selected;
+
+    const sizedModels = models.filter(m => m.size != null);
+
+    // Find best accuracy model per size group for labeling
+    const bestBySize = {};
+    sizedModels.forEach(m => {
+      const key = Math.round(m.size);
+      if (!bestBySize[key] || m.accuracy > bestBySize[key].accuracy) {
+        bestBySize[key] = m;
+      }
+    });
+
+    // Proprietary models without size → horizontal markLines
+    const propModels = models.filter(m => m.size == null).sort((a,b) => b.accuracy - a.accuracy);
+    const bestPropAcc = propModels[0]?.accuracy;
+    // Group by accuracy to deduplicate lines at the same y value
+    const propByAcc = {};
+    propModels.forEach(m => {
+      const key = m.accuracy.toFixed(1);
+      if (!propByAcc[key]) propByAcc[key] = { accuracy: m.accuracy, names: [], type: m.type };
+      propByAcc[key].names.push(m.name);
+    });
+    const propMarkLines = Object.values(propByAcc).map(g => {
+      const isBest = g.accuracy === bestPropAcc;
+      return {
+        yAxis: g.accuracy,
+        name: g.names.join(', '),
+        lineStyle: {
+          color: TYPE_COLORS[g.type] || '#7c3aed',
+          type: 'dashed',
+          width: isBest ? 1.5 : 0.8,
+          opacity: isBest ? 0.7 : 0.12
+        },
+        label: {
+          show: isBest,
+          formatter: g.names.join(', '),
+          position: 'insideEndTop',
+          fontSize: 10,
+          color: TYPE_COLORS[g.type] || '#7c3aed'
+        }
+      };
+    });
+
+    const series = Object.keys(TYPE_COLORS).map(type => {
+      const s = {
+        name: TYPE_LABELS[type],
+        type: 'scatter',
+        symbolSize: 10,
+        itemStyle: { color: TYPE_COLORS[type] },
+        label: { show: false },
+        data: sizedModels
+          .filter(m => m.type === type)
+          .map(m => {
+            const cat = getModelCategory(m.name);
+            const isBest = bestBySize[Math.round(m.size)]?.name === m.name;
+            const d = {
+              value: [m.size, m.accuracy],
+              name: m.name,
+              symbol: CATEGORY_SYMBOLS[cat],
+              symbolSize: isBest ? 12 : 10,
+              itemStyle: { opacity: isBest ? 1.0 : 0.2 }
+            };
+            if (isBest) {
+              d.label = { show: true, position: 'top', formatter: '{b}', fontSize: 10, color: 'inherit' };
+            }
+            return d;
+          })
+      };
+      // Attach proprietary markLines to the proprietary series
+      if (type === 'proprietary' && propMarkLines.length > 0) {
+        s.markLine = {
+          symbol: 'none',
+          animationDuration: 1200,
+          animationEasing: 'cubicOut',
+          data: propMarkLines
+        };
+      }
+      return s;
+    });
+
+    // Compute y-axis range including both scatter points and proprietary markLines
+    const allAccuracies = sizedModels.map(m => m.accuracy).concat(propModels.map(m => m.accuracy));
+    const yMin = Math.floor(Math.min(...allAccuracies) / 5) * 5;
+    const yMax = Math.ceil(Math.max(...allAccuracies) / 5) * 5;
+
+    chart.setOption({
+      animation: true,
+      animationDuration: 800,
+      animationEasing: 'cubicOut',
+      animationDurationUpdate: 500,
+      animationEasingUpdate: 'cubicInOut',
+      tooltip: {
+        trigger: 'item',
+        axisPointer: { type: 'cross' },
+        formatter: function(p) {
+          if (p.componentSubType === 'scatter') {
+            return '<strong>' + p.name + '</strong><br/>Size: ' + p.value[0] + 'B<br/>Accuracy: ' + p.value[1].toFixed(1) + '%';
+          }
+          return '<strong>' + p.name + '</strong><br/>Accuracy: ' + p.value.toFixed(1) + '%';
+        }
+      },
+      legend: { top: 0, left: 10, textStyle: { fontSize: 11 }, selected: legendSelected || undefined },
+      grid: { left: 50, right: 20, top: 40, bottom: 40 },
+      xAxis: {
+        name: 'Parameters (B)',
+        nameLocation: 'center',
+        nameGap: 28,
+        type: 'log',
+        min: 1,
+        axisLabel: { formatter: '{value}B' },
+        axisPointer: {
+          snap: true,
+          label: { formatter: function(p){ return Math.round(p.value) + 'B'; } }
+        }
+      },
+      yAxis: {
+        name: 'Accuracy (%)',
+        nameLocation: 'center',
+        nameGap: 35,
+        min: yMin,
+        max: yMax,
+        axisPointer: {
+          snap: true,
+          label: { formatter: function(p){ return p.value.toFixed(1) + '%'; } }
+        }
+      },
+      series
+    }, true);
+  }
+
+  // --- Event listeners ---
+  document.querySelectorAll('#benchmark-btns input[type="radio"]').forEach(radio => {
+    radio.addEventListener('change', () => {
+      currentBench = radio.value;
+      renderTable();
+    });
+  });
+
+
+  function updateShapeLegendStyle() {
+    document.querySelectorAll('#shape-legend span[data-cat]').forEach(el => {
+      const cat = el.dataset.cat;
+      el.style.opacity = activeCategories.has(cat) ? '1' : '0.35';
+      el.style.textDecoration = activeCategories.has(cat) ? 'none' : 'line-through';
+    });
+  }
+
+  document.querySelectorAll('#shape-legend span[data-cat]').forEach(el => {
+    el.addEventListener('click', () => {
+      const cat = el.dataset.cat;
+      if (activeCategories.has(cat)) {
+        if (activeCategories.size > 1) activeCategories.delete(cat);
+      } else {
+        activeCategories.add(cat);
+      }
+      updateShapeLegendStyle();
+      renderTable();
+    });
+  });
+
+  // --- Init ---
+  fetch('results.json')
+    .then(r => r.json())
+    .then(data => { DATA = data; renderTable(); })
+    .catch(err => {
+      document.getElementById('lb-body').innerHTML =
+        `<tr><td colspan="99" style="text-align:center;color:#ef4444">Failed to load results.json</td></tr>`;
+      console.error(err);
+    });
+})();
+</script>
+</body>
+</html>
